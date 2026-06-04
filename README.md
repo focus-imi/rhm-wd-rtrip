@@ -59,15 +59,15 @@ The register detail page exposes a consistent field set. This table is the field
 | Заглавие / title | „Братската могила“… | label `bg`/`en` | `name:bg` / `name:en` |
 | Вид / type | Паметник | `P31` (see mapping) | `historic=*` + `memorial=*` |
 | Подвид / subtype | архитектурно-скулптурен ансамбъл | `P31` refinement / `P136` | `memorial=*` refinement |
-| Район / district | Средец | `P131` | `addr:*` (implicit via geometry) |
-| Местоположение / location text | парк „Борисова градина“ | `P276` (location) | position + `addr:*` |
+| Район / district | Средец | `P131` | implicit via geometry |
+| Местоположение / location text | парк „Борисова градина“ | `P276` (location) | position |
 | Описание / description | narrative text | `description` (short) / `P973` to register | — |
 | Дата на създаване / creation date | 1956 г. | `P571` (inception) | `start_date` |
 | Период / period | 1944–1989 г. | qualifier on `P571` | — |
 | Автор(и) / author(s) + role | Йордан Кръчмаров (скулптор) | `P170` / `P84` → existing person item | `artist:wikidata` / `artist_name` |
 | Снимки / photos | gallery | `P18` (via Commons) | `image` / `wikimedia_commons` |
 | Карта / map pin | lat/lon | `P625` | node/way/area geometry |
-| Канонично id / register id | (Stage 1) | **new external-id P** + `P856` | `ref:registersofia` or `website` (TBD) |
+| Канонично id / register id | (Stage 1) | **new external-id P** + `P856` | `ref:registersofia` and `website`  |
 
 ---
 
