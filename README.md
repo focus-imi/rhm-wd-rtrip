@@ -19,7 +19,7 @@ The project keeps the records linked so that errors found and entries discovered
 
 | Source | Role | Owns |
 |--------|------|------|
-| **[registersofia.bg](https://registersofia.bg/)** (RIHM Sofia) | Canonical inventory | Names, types, location text, narrative descriptions, dates, periods, authors, photos, administrative district, register lifecycle |
+| **[registersofia.bg](https://registersofia.bg/)** (RHM Sofia) | Canonical inventory | Names, types, location text, narrative descriptions, dates, periods, authors, photos, administrative district, register lifecycle |
 | **Wikidata** | Semantic layer | Monument items (merged with existing Q-items), subject relations (person / event / …), creator links, register ID, OSM node/way ID, Commons images, references |
 | **OpenStreetMap** | Geospatial layer | Point/area geometry, `wikidata=*`, `subject:wikidata=*`, `artist:wikidata=*`, bilingual `name:*` |
 
