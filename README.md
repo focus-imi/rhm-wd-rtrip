@@ -7,7 +7,7 @@ This project proposes establishing a lasting reciprocal synchronisation between 
 The goal of the round-tripping is to improve the quality of *both* the register and Wikidata and Open Data, and to build a lasting GLAM collaboration between RIHM and the Wikimedia/OSM communities. 
 
 Each platform owns what it does best: 
-* RHIM holds the canonical inventory (names, types, dates, authors, photos, administrative location); 
+* RHM holds the canonical inventory (names, types, dates, authors, photos, administrative location); 
 * Wikidata carries structured semantics and stable cross-identifiers (instance-of typing, who/what each object commemorates, creator links, Commons images, OSM ids); 
 * OpenStreetMap carries the precise geometry and map-facing tags. Shared identifiers — a register-id property on Wikidata, `wikidata=*` on OSM features.  
 
