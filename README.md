@@ -39,6 +39,17 @@ The project keeps the records linked so that errors found and entries discovered
 
 ---
 
+## Example
+
+Worked object: **„Братската могила“, architectural-sculptural ensemble, Borisova Gradina**.
+
+This object already exists across the sources and is a useful round-trip test case:
+
+- **RIHM register:** [object 629](https://registersofia.bg/index.php?view=monument&option=com_monuments&formdata%5Bid%5D=629&Itemid=140)
+- **Wikidata:** [Q899761](https://www.wikidata.org/wiki/Q899761)
+- **OpenStreetMap:** [way 867938756](https://www.openstreetmap.org/way/867938756), tagged `wikidata=Q899761`
+- **Wikipedia:** [Братска могила (София)](https://bg.wikipedia.org/wiki/Братска_могила_(София))
+
 ## Register fields → targets
 
 The register detail page exposes a consistent field set. This table is the field-level contract for the round-trip (refine once the canonical export schema is fixed in Stage 1).
@@ -165,7 +176,7 @@ Do not auto-link every name in free text; curate with AI assist + human review.
 
 ### Authors / creators
 
-Link only to **existing Wikidata person items** — do not create new person items solely from register author strings unless notability is clear elsewhere.
+Register-listed authors/creators are treated as **Wikidata-notable**: link to existing person items where available, otherwise create new person items with register references and reconciled name/role data.
 
 | Register role | Candidate property |
 |---------------|-------------------|
@@ -263,7 +274,6 @@ No Mix'n'Match catalog.
 
 ## Related work
 
-- [Sofia street-names Wiki–OSM pattern](../events/2026-07-streetnames-imi/) — proven round-trip at city scale (P402, SPARQL QC, Kartographer).
 - [FOCUS data-workshop: Wikidata patterns](../collections/data-workshop/README.md) — reconciliation pipeline, property proposals, dataset footprint on Wikidata.
 - [registersofia.bg](https://registersofia.bg/) — current register (~1,121 objects, six types, 24 districts).
 - [urbandata.sofia.bg](https://urbandata.sofia.bg/) — target host for open-data exports.
