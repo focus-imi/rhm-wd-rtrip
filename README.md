@@ -286,7 +286,7 @@ No Mix'n'Match catalog.
 - [Wikidata:OpenStreetMap](https://www.wikidata.org/wiki/Wikidata:OpenStreetMap) — OSM-id properties (`P11693` node, `P10689` way, `P402` relation).
 - [OSM Key:memorial](https://wiki.openstreetmap.org/wiki/Key:memorial) / [Tag:historic=monument](https://wiki.openstreetmap.org/wiki/Tag:historic=monument) — `subject:wikidata`, `artist:wikidata` conventions.
 - [Overpass Turbo — Sofia register-type QC](https://overpass-turbo.eu/s/2r7f) — Stage 3 orphan discovery within Sofia Municipality (relation 7276261).
-
+- [OSM BG tools](https://osm-bg.github.io/qa/)
 ---
 
 ## Next steps
