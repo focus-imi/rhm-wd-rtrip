@@ -276,7 +276,6 @@ No Mix'n'Match catalog.
 
 ## Related work
 
-- [FOCUS data-workshop: Wikidata patterns](../collections/data-workshop/README.md) — reconciliation pipeline, property proposals, dataset footprint on Wikidata.
 - [registersofia.bg](https://registersofia.bg/) — current register (~1,121 objects, six types, 24 districts).
 - [urbandata.sofia.bg](https://urbandata.sofia.bg/) — target host for open-data exports.
 
