@@ -2,7 +2,16 @@
 
 Data round-tripping between the [Sofia monument register](https://registersofia.bg/) (RIHM Sofia), Wikidata, and OpenStreetMap.
 
-This project applies [data round-tripping](https://www.wikidata.org/wiki/Wikidata:Data_round-tripping) — the reciprocal synchronisation of data between Wikidata and an external authority it interconnects with — to Sofia's municipal inventory of public monuments (memorial plaques, monuments, sculptures, fountains, free-standing memorial signs, and decorative elements). The external authority here is the [Regional History Museum – Sofia](https://registersofia.bg/) (RIHM) register; the goal of round-tripping is to improve the quality of *both* the register and Wikidata (and, by extension, OpenStreetMap), and to build a lasting GLAM collaboration between RIHM and the Wikimedia/OSM data-quality communities. Each platform owns what it does best: the register holds the canonical inventory (names, types, dates, authors, photos, administrative location); Wikidata carries structured semantics and stable cross-identifiers (instance-of typing, who/what each object commemorates, creator links, Commons images, OSM ids); OpenStreetMap carries the precise geometry and map-facing tags. Shared identifiers — a register-id property on Wikidata, `wikidata=*` on OSM features — keep the records linked so that errors found and entries discovered on the Wikidata/OSM side flow **back** into the register rather than being a one-way export, while live SPARQL feeds Wikipedia links onto register pages. Concretely, the project will not only mirror the existing ~1,121 objects but grow the register itself by identifying monuments already in Wikidata or OSM that are missing from RIHM and contributing them back (Stage 3). 
+This project proposes [data round-tripping](https://www.wikidata.org/wiki/Wikidata:Data_round-tripping) — the reciprocal synchronisation of data between Wikidata and an external authority it interconnects with — to Sofia's municipal inventory of public monuments (memorial plaques, monuments, sculptures, fountains, free-standing memorial signs, and decorative elements). 
+
+The external authority here is the [Regional History Museum – Sofia](https://registersofia.bg/) (RIHM) register; the goal of round-tripping is to improve the quality of *both* the register and Wikidata (and, by extension, OpenStreetMap), and to build a lasting GLAM collaboration between RIHM and the Wikimedia/OSM data-quality communities. 
+
+Each platform owns what it does best: 
+* RHIM holds the canonical inventory (names, types, dates, authors, photos, administrative location); 
+* Wikidata carries structured semantics and stable cross-identifiers (instance-of typing, who/what each object commemorates, creator links, Commons images, OSM ids); 
+* OpenStreetMap carries the precise geometry and map-facing tags. Shared identifiers — a register-id property on Wikidata, `wikidata=*` on OSM features 
+
+The project keeps the records linked so that errors found and entries discovered on the Wikidata/OSM side flow **back** into the register rather than being a one-way export, while live SPARQL feeds Wikipedia links onto register pages. Concretely, the project will not only mirror the existing ~1,121 objects but grow the register itself by identifying monuments already in Wikidata or OSM that are missing from RIHM and contributing them back (Stage 3). 
 
 ---
 
@@ -24,32 +33,6 @@ This project applies [data round-tripping](https://www.wikidata.org/wiki/Wikidat
 - **Objects:** all register types — memorial plaque, monument, sculpture, fountain, free-standing memorial sign, decorative element; plus **new objects** added to the register via project-driven gap filling (expected to exceed the current ~1,121 count over time).
 - **Partnership:** full cooperation from RIHM Sofia.
 - **Out of scope (for now):** automated Stage 4 sync rules; photo legal edge cases; OSM matching heuristics. Register intake workflow for new objects is **in scope** (Stage 3) but not yet defined.
-
----
-
-## Architecture
-
-```mermaid
-flowchart LR
-  RHM["registersofia.bg<br/>(source of truth)"]
-  WD["Wikidata<br/>(semantics + IDs)"]
-  OSM["OpenStreetMap<br/>(geometry)"]
-  CKAN["urbandata.sofia.bg<br/>(periodic dump)"]
-  Commons["Wikimedia Commons<br/>(CC photos)"]
-  Wiki["Wikipedia<br/>(sitelinks)"]
-
-  RHM -->|"Stage 1: dump"| CKAN
-  RHM -->|"Stage 2: import"| WD
-  WD <-->|"merge existing Q-items"| WD
-  WD -->|"P973 / wikidata tag"| OSM
-  OSM -->|"coordinates"| WD
-  RHM -->|"Stage 1: CC photos"| Commons
-  Commons -->|"P18"| WD
-  WD -->|"live SPARQL"| RHM
-  WD -->|"sitelinks"| Wiki
-  Wiki -->|"display on RHM page"| RHM
-  WD -.->|"Stage 3: orphans"| RHM
-```
 
 ---
 
@@ -82,12 +65,12 @@ Work on the register side before bulk Wikidata import.
 
 | Deliverable | Status | Notes |
 |-------------|--------|-------|
-| **Canonical identifier** | 🔲 TBD at RIHM | Resolve current ID ambiguity (URL `formdata[id]`, media path prefix, PDF/QR id). One stable id everywhere. |
-| **Clean URIs** | 🔲 TBD | Prefer flat ids without type/district infix, e.g. `registersofia.bg/object/{id}`. Author entities need their own ids and URIs too. |
-| **Periodic open-data export** | 🔲 | Static releases on [urbandata.sofia.bg](https://urbandata.sofia.bg/) (CKAN). Format TBD (JSON / CSV / RDF). |
-| **Photo licence** | 🔲 negotiate | Target **CC BY 4.0** — mandatory for project; legal sign-off pending. |
-| **Commons upload pipeline** | 🔲 | Register photos uploaded to Commons; linked from Wikidata `P18` and register page. |
-| **Photo restrictions audit** | 🔲 TBD | Edge cases (modern people, artwork reproduction, interior shots) — to be assessed with RIHM. |
+| **Canonical identifier** | TBD at RIHM | Resolve current ID ambiguity (URL `formdata[id]`, media path prefix, PDF/QR id). One stable id everywhere. |
+| **Clean URIs** | TBD | Prefer flat ids without type/district infix, e.g. `registersofia.bg/object/{id}`. Author entities need their own ids and URIs too. |
+| **Periodic open-data export** | - | Static releases on [urbandata.sofia.bg](https://urbandata.sofia.bg/) (CKAN). Format TBD (JSON / CSV / RDF). |
+| **Photo licence** | negotiate | Target **CC BY 4.0** — mandatory for project; legal sign-off pending. |
+| **Commons upload pipeline** | - | Register photos uploaded to Commons; linked from Wikidata `P18` and register page. |
+| **Photo restrictions audit** | TBD | Edge cases (modern people, artwork reproduction, interior shots) — to be assessed with RIHM. |
 
 **Stage 1 exit criteria:** every object has one canonical id, one stable URI, a row in the CKAN dump, and at least metadata for Commons upload (even if upload runs in Stage 2).
 
@@ -97,11 +80,11 @@ Work on the register side before bulk Wikidata import.
 
 | Deliverable | Status | Notes |
 |-------------|--------|-------|
-| **New Wikidata property** | 🔲 | External-id property for Sofia monument register (proposal on Wikidata). No Mix'n'Match catalog — alignment done in-house with AI assistance. |
-| **Bulk import from CKAN dump** | 🔲 | Create or **merge** items (prefer existing Q-items, e.g. well-known monuments already in Wikidata). |
-| **Modeling** | 🔲 | See [Wikidata modeling](#wikidata-modeling) below. |
-| **OSM matching** | 🔲 TBD | Strategy, tolerance, facade-plaque tagging — to be defined. Edits by OSM community + project team. |
-| **Tag mapping** | 🔲 TBD | Register type → `historic=*` / `memorial=*` convention. |
+| **New Wikidata property** |  | External-id property for Sofia monument register (proposal on Wikidata). No Mix'n'Match catalog — alignment done in-house with AI assistance. |
+| **Bulk import from CKAN dump** |  | Create or **merge** items (prefer existing Q-items, e.g. well-known monuments already in Wikidata). |
+| **Modeling** | | See [Wikidata modeling](#wikidata-modeling) below. |
+| **OSM matching** | TBD | Strategy, tolerance, facade-plaque tagging — to be defined. Edits by OSM community + project team. |
+| **Tag mapping** |  TBD | Register type → `historic=*` / `memorial=*` convention. |
 
 **Stage 2 exit criteria:** every register object has a Wikidata item with register id + `P856`; majority matched to OSM features; Commons photos on high-value subset at minimum.
 
@@ -224,7 +207,6 @@ Display rules:
 - Add a small **Wikidata icon** linking to the monument Q-item (no prominent banner).
 
 Implementation: server-side or client-side SPARQL against `query.wikidata.org`, keyed by register id → Q-item via the new external-id property. See [this example](https://www.strazha.bg/mps/nikolay-denkov-denkov/) with social media profiles of MPs on Strazha.bg
-
 
 ---
 
