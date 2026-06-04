@@ -50,6 +50,8 @@ This object already exists across the sources and is a useful round-trip test ca
 - **OpenStreetMap:** [way 867938756](https://www.openstreetmap.org/way/867938756), tagged `wikidata=Q899761`
 - **Wikipedia:** [Братска могила (София)](https://bg.wikipedia.org/wiki/Братска_могила_(София))
 
+Also see [osm_borisova.png](img/osm_borisova.png) for example of remarkable OSM coverage of busts in Sofia's parks.
+
 ## Register fields → targets
 
 The register detail page exposes a consistent field set. This table is the field-level contract for the round-trip (refine once the canonical export schema is fixed in Stage 1).
