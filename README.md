@@ -2,16 +2,16 @@
 
 [Data round-tripping](https://www.wikidata.org/wiki/Wikidata:Data_round-tripping) between the [Sofia monument register](https://registersofia.bg/) (RHM Sofia), Wikidata, and OpenStreetMap.
 
-This project proposes establishing a lasting reciprocal synchronisation between the [Regional History Museum – Sofia](https://registersofia.bg/) (RHM) inventory of public monuments (memorial plaques, monuments, sculptures) and the Wikidata - Wikipedia - OSM open data ecosystem.  
+This project proposes establishing a lasting reciprocal synchronisation between the [Regional History Museum – Sofia](https://registersofia.bg/) (RHM) inventory of public monuments (memorial plaques, monuments, sculptures) and the Wikidata–Wikipedia–OSM open-data ecosystem.
 
-The goal of the round-tripping is to improve the quality of *both* the register and Wikidata and Open Data, and to build a lasting GLAM collaboration between RHM and the Wikimedia/OSM communities. 
+The goal of the round-tripping is to improve the quality of *both* the register and the open-data ecosystem, and to build a lasting GLAM collaboration between RHM and the Wikimedia/OSM communities.
 
-Each platform owns what it does best: 
-* RHM holds the canonical inventory (names, types, dates, authors, photos, administrative location); 
-* Wikidata carries structured semantics and stable cross-identifiers (instance-of typing, who/what each object commemorates, creator links, Commons images, OSM ids); 
-* OpenStreetMap carries the precise geometry and map-facing tags. Shared identifiers — a register-id property on Wikidata, `wikidata=*` on OSM features.  
+Each platform owns what it does best:
+* RHM holds the canonical inventory (names, types, dates, authors, photos, administrative location);
+* Wikidata carries structured semantics and stable cross-identifiers (instance-of typing, who/what each object commemorates, creator links, Commons images, OSM IDs);
+* OpenStreetMap carries the precise geometry and map-facing tags. Shared identifiers are a register-ID property on Wikidata and `wikidata=*` on OSM features.
 
-The project keeps the records linked so that errors found and entries discovered on the Wikidata/OSM side **flow back** into the register rather than being a one-way export, while **live SPARQL** feeds Wikipedia links onto register pages. Concretely, the project will not only mirror the existing ~1,121 objects but grow the register itself by identifying monuments already in Wikidata or OSM that are missing from RHM and contributing them back (Stage 3). 
+The project keeps the records linked so that errors found and entries discovered on the Wikidata/OSM side **flow back** into the register rather than being a one-way export, while **live SPARQL** feeds Wikipedia links onto register pages. Concretely, the project will not only mirror the existing ~1,121 objects but grow the register itself by identifying monuments already in Wikidata or OSM that are missing from RHM and contributing them back (Stage 3).
 
 ---
 
@@ -32,7 +32,7 @@ The project keeps the records linked so that errors found and entries discovered
 
 ## Scope
 
-- **Geography:** full Sofia Municipality 
+- **Geography:** full Sofia Municipality
 - **Objects:** all register types — memorial plaque, monument, sculpture, fountain, free-standing memorial sign, decorative element; plus **new objects** added to the register via project-driven gap filling (expected to exceed the current ~1,121 count over time).
 - **Partnership:** full cooperation from RHM Sofia.
 - **Out of scope (for now):** automated Stage 4 sync rules; photo legal edge cases; OSM matching heuristics. Register intake workflow for new objects is **in scope** (Stage 3) but not yet defined.
@@ -50,7 +50,7 @@ This object already exists across the sources and is a useful round-trip test ca
 - **OpenStreetMap:** [way 867938756](https://www.openstreetmap.org/way/867938756), tagged `wikidata=Q899761`
 - **Wikipedia:** [Братска могила (София)](https://bg.wikipedia.org/wiki/Братска_могила_(София))
 
-Also see [osm_borisova.png](img/osm_borisova.png) for example of remarkable OSM coverage of busts in Sofia's parks.
+Also see [osm_borisova.png](img/osm_borisova.png) for an example of detailed OSM coverage of busts in Sofia's parks.
 
 ## Register fields → targets
 
@@ -69,7 +69,7 @@ The register detail page exposes a consistent field set. This table is the field
 | Автор(и) / author(s) + role | Йордан Кръчмаров (скулптор) | `P170` / `P84` → existing person item | `artist:wikidata` / `artist_name` |
 | Снимки / photos | gallery | `P18` (via Commons) | `image` / `wikimedia_commons` |
 | Карта / map pin | lat/lon | `P625` | node/way/area geometry |
-| Канонично id / register id | (Stage 1) | **new external-id P** + `P856` | `ref:registersofia` and `website`  |
+| Каноничен ID / register ID | (Stage 1) | **new external-ID property** + `P856` | `ref:registersofia` and `website`  |
 
 ---
 
@@ -81,14 +81,14 @@ Work on the register side before bulk Wikidata import.
 
 | Deliverable | Status | Notes |
 |-------------|--------|-------|
-| **Canonical identifier** | TBD at RHM | Resolve current ID ambiguity (URL `formdata[id]`, media path prefix, PDF/QR id). One stable id everywhere. |
-| **Clean URIs** | TBD | Prefer flat ids without type/district infix, e.g. `registersofia.bg/object/{id}`. Author entities need their own ids and URIs too. |
+| **Canonical identifier** | TBD at RHM | Resolve current ID ambiguity (URL `formdata[id]`, media path prefix, PDF/QR ID). One stable ID everywhere. |
+| **Clean URIs** | TBD | Prefer flat IDs without type/district infix, e.g. `registersofia.bg/object/{id}`. Author entities need their own IDs and URIs too. |
 | **Periodic open-data export** | - | Static releases on [urbandata.sofia.bg](https://urbandata.sofia.bg/) (CKAN). Format TBD (JSON / CSV / RDF). |
 | **Photo licence** | negotiate | Target **CC BY 4.0** — mandatory for project; legal sign-off pending. |
 | **Commons upload pipeline** | - | Register photos uploaded to Commons; linked from Wikidata `P18` and register page. |
 | **Photo restrictions audit** | TBD | Edge cases (modern people, artwork reproduction, interior shots) — to be assessed with RHM. |
 
-**Stage 1 exit criteria:** every object has one canonical id, one stable URI, a row in the CKAN dump, and at least metadata for Commons upload (even if upload runs in Stage 2).
+**Stage 1 exit criteria:** every object has one canonical ID, one stable URI, a row in the CKAN dump, and at least metadata for Commons upload (even if upload runs in Stage 2).
 
 ---
 
@@ -96,13 +96,13 @@ Work on the register side before bulk Wikidata import.
 
 | Deliverable | Status | Notes |
 |-------------|--------|-------|
-| **New Wikidata property** |  | External-id property for Sofia monument register (proposal on Wikidata). No Mix'n'Match catalog — alignment done in-house with AI assistance. |
+| **New Wikidata property** |  | External-ID property for Sofia monument register (proposal on Wikidata). No Mix'n'Match catalog — alignment done in-house with AI assistance. |
 | **Bulk import from CKAN dump** |  | Create or **merge** items (prefer existing Q-items, e.g. well-known monuments already in Wikidata). |
 | **Modeling** | | See [Wikidata modeling](#wikidata-modeling) below. |
 | **OSM matching** | TBD | Strategy, tolerance, facade-plaque tagging — to be defined. Edits by OSM community + project team. |
 | **Tag mapping** |  TBD | Register type → `historic=*` / `memorial=*` convention. |
 
-**Stage 2 exit criteria:** every register object has a Wikidata item with register id + `P856`; majority matched to OSM features; Commons photos on high-value subset at minimum.
+**Stage 2 exit criteria:** every register object has a Wikidata item with register ID + `P856`; majority matched to OSM features; Commons photos on high-value subset at minimum.
 
 ---
 
@@ -112,7 +112,7 @@ Monuments present in Wikidata and/or OSM but **missing from the register** — t
 
 | Step | Direction |
 |------|-----------|
-| 1 | Identify orphans (SPARQL + [Overpass QC query](https://overpass-turbo.eu/s/2r7f) — all six register types in Sofia Municipality). |
+| 1 | Identify orphans (SPARQL + [Overpass QC query](https://overpass-turbo.eu/s/2r7f) — register-relevant public monuments and artworks in Sofia Municipality). |
 | 2 | Open **RHM ticket** to add / correct register entry. |
 | 3 | After RHM accepts → propagate to Wikidata (and OSM if needed). |
 
@@ -124,7 +124,7 @@ Monuments present in Wikidata and/or OSM but **missing from the register** — t
 
 ### Stage 4 — Automated alignment maintenance
 
- **TBD** — sync triggers, field-level source-of-truth rules, conflict resolution. Deferred until Stages 1–3 produce stable ids and mappings.
+**TBD** — sync triggers, field-level source-of-truth rules, conflict resolution. Deferred until Stages 1–3 produce stable IDs and mappings.
 
 ---
 
@@ -142,8 +142,8 @@ Minimum claims on import:
 | Coordinates | `P625` | Register map pin and/or OSM once matched |
 | Location | `P131` / `P276` | Sofia district / park / street from register |
 | Official page | `P856` | Stable register URI |
-| Register ID | **new P** | Canonical id from Stage 1 |
-| OSM id | `P11693` (node), `P10689` (way), or `P402` (relation) — pick per geometry | After OSM match |
+| Register ID | **new external-ID property** | Canonical ID from Stage 1 |
+| OSM ID | `P11693` (node), `P10689` (way), or `P402` (relation) — pick per geometry | After OSM match |
 | Image | `P18` | Commons file from register photo |
 | Inception | `P571` | Register creation date |
 | Inscription | `P1684` | Register inscription text where present |
@@ -159,7 +159,7 @@ Minimum claims on import:
 | Свободно-стоящ паметен знак (free-standing sign) | memorial `Q5003624` |
 | Декоративен елемент (decorative element) | work of art `Q838948` / case-by-case |
 
-Labels: **Bulgarian + English** on every item. References: register URL + dump version date.
+Labels: **Bulgarian + English** on every item. References on imported statements should use the stable register page as `reference URL (P854)` plus `retrieved (P813)`; for dump-sourced imports, also record the CKAN dump version/date.
 
 ### Subject relations (person, event, …)
 
@@ -186,7 +186,7 @@ Register-listed authors/creators are treated as **Wikidata-notable**: link to ex
 | `(арх.)` | `P84` (architect) |
 | `(худ.)` | `P170` (creator) |
 
-Role qualifiers and multi-author statements as needed. Register author id stored only if a dedicated author property is justified later — otherwise `P854` on the author link suffices.
+Role qualifiers and multi-author statements as needed. Register author ID stored only if a dedicated author property is justified later — otherwise a register-page reference on the creator/architect statement (`P854` + `P813`) suffices.
 
 ---
 
@@ -222,7 +222,7 @@ Display rules:
 - Language follows register UI locale (`bg` / `en`).
 - Add a small **Wikidata icon** linking to the monument Q-item (no prominent banner).
 
-Implementation: server-side or client-side SPARQL against `query.wikidata.org`, keyed by register id → Q-item via the new external-id property. See [this example](https://www.strazha.bg/mps/nikolay-denkov-denkov/) with social media profiles of MPs on Strazha.bg
+Implementation: server-side or client-side SPARQL against `query.wikidata.org`, keyed by register ID → Q-item via the new external-ID property. See [this Strazha.bg example](https://www.strazha.bg/mps/nikolay-denkov-denkov/) showing social media profiles of MPs.
 
 ---
 
@@ -236,7 +236,8 @@ Periodic static dataset on [Sofia Municipality’s CKAN portal](https://urbandat
 - **Licence:** dataset metadata should declare object field licence; photos **CC BY 4.0** once negotiated.
 
 This dump is the **input artifact** for Wikidata import scripts and QC — not a live API dependency.
-Photos, might be handled by a separate pipeline
+Photos may be handled by a separate pipeline.
+
 ---
 
 ## Tooling (planned)
@@ -259,7 +260,7 @@ No Mix'n'Match catalog.
 
 | # | Topic | Status |
 |---|-------|--------|
-| D1 | Canonical register id (resolve multi-id issue) | Stage 1 / RHM |
+| D1 | Canonical register ID (resolve multi-ID issue) | Stage 1 / RHM |
 | D2 | URI pattern for objects and authors | Stage 1 / RHM |
 | D3 | CKAN export format and cadence | Stage 1 |
 | D4 | CC BY 4.0 legal approval | Negotiation |
@@ -282,15 +283,16 @@ No Mix'n'Match catalog.
 **Modeling references**
 
 - [Wikidata:WikiProject Public art / Data model](https://www.wikidata.org/wiki/Wikidata:WikiProject_Public_art/Data_model) — `P31` choices, `commemorates`, `genre=public art`.
-- [Wikidata:OpenStreetMap](https://www.wikidata.org/wiki/Wikidata:OpenStreetMap) — OSM-id properties (`P11693` node, `P10689` way, `P402` relation).
+- [Wikidata:OpenStreetMap](https://www.wikidata.org/wiki/Wikidata:OpenStreetMap) — OSM ID properties (`P11693` node, `P10689` way, `P402` relation).
 - [OSM Key:memorial](https://wiki.openstreetmap.org/wiki/Key:memorial) / [Tag:historic=monument](https://wiki.openstreetmap.org/wiki/Tag:historic=monument) — `subject:wikidata`, `artist:wikidata` conventions.
 - [Overpass Turbo — Sofia register-type QC](https://overpass-turbo.eu/s/2r7f) — Stage 3 orphan discovery within Sofia Municipality (relation 7276261).
-- [OSM BG tools](https://osm-bg.github.io/qa/)
+- [OSM BG tools](https://osm-bg.github.io/qa/) — Bulgarian OSM QA tooling.
+- [Wikidata:Data round-tripping](https://www.wikidata.org/wiki/Wikidata:Data_round-tripping) — general Wikidata guidance for reciprocal data flows.
 ---
 
 ## Next steps
 
-1. **RHM kickoff** — agree Stage 1 scope: canonical id scheme, URI design, EN UI scope, CKAN dataset metadata.
-2. **Draft property proposal** — Sofia monument register ID (can proceed in parallel once id format is fixed).
+1. **RHM kickoff** — agree Stage 1 scope: canonical ID scheme, URI design, EN UI scope, CKAN dataset metadata.
+2. **Draft property proposal** — Sofia monument register ID (can proceed in parallel once ID format is fixed).
 3. **Pilot batch** — import ~20 diverse objects (plaque, monument, fountain, multi-subject, merged Q-item) to validate modeling before full 1,121 run.
 4. **SPARQL prototype** — Wikipedia + Wikidata widget on one register detail page.
