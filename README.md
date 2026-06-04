@@ -1,17 +1,17 @@
 # RHM ↔ Wikidata ↔ OSM round-trip
 
-Data round-tripping between the [Sofia monument register](https://registersofia.bg/) (RIHM Sofia), Wikidata, and OpenStreetMap.
+[Data round-tripping](https://www.wikidata.org/wiki/Wikidata:Data_round-tripping) between the [Sofia monument register](https://registersofia.bg/) (RIHM Sofia), Wikidata, and OpenStreetMap.
 
-This project proposes [data round-tripping](https://www.wikidata.org/wiki/Wikidata:Data_round-tripping) — the reciprocal synchronisation of data between Wikidata and an external authority it interconnects with — to Sofia's municipal inventory of public monuments (memorial plaques, monuments, sculptures, fountains, free-standing memorial signs, and decorative elements). 
+This project proposes establishing a lasting reciprocal synchronisation between the [Regional History Museum – Sofia](https://registersofia.bg/) (RIHM) inventory of public monuments (memorial plaques, monuments, sculptures) and the Wikidata - Wikipedia - OSM open data ecosystem.  
 
-The external authority here is the [Regional History Museum – Sofia](https://registersofia.bg/) (RIHM) register; the goal of round-tripping is to improve the quality of *both* the register and Wikidata (and, by extension, OpenStreetMap), and to build a lasting GLAM collaboration between RIHM and the Wikimedia/OSM data-quality communities. 
+The goal of the round-tripping is to improve the quality of *both* the register and Wikidata and Open Data, and to build a lasting GLAM collaboration between RIHM and the Wikimedia/OSM communities. 
 
 Each platform owns what it does best: 
 * RHIM holds the canonical inventory (names, types, dates, authors, photos, administrative location); 
 * Wikidata carries structured semantics and stable cross-identifiers (instance-of typing, who/what each object commemorates, creator links, Commons images, OSM ids); 
-* OpenStreetMap carries the precise geometry and map-facing tags. Shared identifiers — a register-id property on Wikidata, `wikidata=*` on OSM features 
+* OpenStreetMap carries the precise geometry and map-facing tags. Shared identifiers — a register-id property on Wikidata, `wikidata=*` on OSM features.  
 
-The project keeps the records linked so that errors found and entries discovered on the Wikidata/OSM side flow **back** into the register rather than being a one-way export, while live SPARQL feeds Wikipedia links onto register pages. Concretely, the project will not only mirror the existing ~1,121 objects but grow the register itself by identifying monuments already in Wikidata or OSM that are missing from RIHM and contributing them back (Stage 3). 
+The project keeps the records linked so that errors found and entries discovered on the Wikidata/OSM side **flow back** into the register rather than being a one-way export, while **live SPARQL** feeds Wikipedia links onto register pages. Concretely, the project will not only mirror the existing ~1,121 objects but grow the register itself by identifying monuments already in Wikidata or OSM that are missing from RIHM and contributing them back (Stage 3). 
 
 ---
 
