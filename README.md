@@ -23,7 +23,10 @@ The project keeps the records linked so that errors found and entries discovered
 | **Wikidata** | Semantic layer | Monument items (merged with existing Q-items), subject relations (person / event / …), creator links, register ID, OSM node/way ID, Commons images, references |
 | **OpenStreetMap** | Geospatial layer | Point/area geometry, `wikidata=*`, `subject:wikidata=*`, `artist:wikidata=*`, bilingual `name:*` |
 
-**Reverse enrichment on the register:** monument pages pull Wikipedia sitelinks for the monument, its subject(s), and its author(s) from Wikidata via live SPARQL, plus a subtle Wikidata icon link. Language of Wikipedia links follows the register UI language (Bulgarian interface → `bg.wikipedia`; English interface → `en.wikipedia` where available).
+**Reverse enrichment on the register:**
+
+- **UI pulls Wikipedia links:** monument pages pull Wikipedia sitelinks for the monument, its subject(s), and its author(s) from Wikidata via live SPARQL, plus a subtle Wikidata icon link. Language follows the register UI language (Bulgarian interface → `bg.wikipedia`; English interface → `en.wikipedia` where available).
+- **Project synchronisation feeds the register:** the round-trip process gradually contributes both new objects missing from the RIHM inventory and additional information for existing objects, so improvements discovered in Wikidata and OpenStreetMap flow back into the register.
 
 ---
 
@@ -108,7 +111,7 @@ Monuments present in Wikidata and/or OSM but **missing from the register** — t
 
 ### Stage 4 — Automated alignment maintenance
 
-🔲 **TBD** — sync triggers, field-level source-of-truth rules, conflict resolution. Deferred until Stages 1–3 produce stable ids and mappings.
+ **TBD** — sync triggers, field-level source-of-truth rules, conflict resolution. Deferred until Stages 1–3 produce stable ids and mappings.
 
 ---
 
