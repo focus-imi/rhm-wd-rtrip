@@ -1,3 +1,12 @@
 .DS_Store
 *.swp
 *~
+
+# Scrape caches and bulky exports
+scrape/cache/
+scrape/export/*.jsonl
+scrape/export/photo_urls.txt
+scrape/export/canonical_ids.csv
+scrape/__pycache__/
+*.pyc
+.gitignore

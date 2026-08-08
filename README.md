@@ -81,7 +81,7 @@ Work on the register side before bulk Wikidata import.
 
 | Deliverable | Status | Notes |
 |-------------|--------|-------|
-| **New Wikidata property** | draft: [`wikidata/property-proposal.wiki`](wikidata/property-proposal.wiki) | External-ID property for Sofia monument register (proposal on Wikidata). No Mix'n'Match catalog — alignment done in-house with AI assistance. Reconciliation candidates: [`wikidata/wd-match-candidates.csv`](wikidata/wd-match-candidates.csv). |
+| **New Wikidata property** | [Wikidata:Property_proposal/Sofia_monuments_register_ID](https://www.wikidata.org/wiki/Wikidata:Property_proposal/Sofia_monuments_register_ID) | External-ID property for Sofia monument register (proposal on Wikidata). No Mix'n'Match catalog — alignment done in-house with AI assistance. Reconciliation candidates: [`wikidata/wd-match-candidates.csv`](wikidata/wd-match-candidates.csv). |
 | **Bulk import from CKAN dump** |  | Create or **merge** items (prefer existing Q-items, e.g. well-known monuments already in Wikidata). |
 | **Modeling** | | See [Wikidata modeling](#wikidata-modeling) below. |
 

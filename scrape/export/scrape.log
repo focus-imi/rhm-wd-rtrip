@@ -1,0 +1,111 @@
+
+=== fetch_map.py ===
+map type=1 (plaque) …
+  clusters→ids: 496
+map type=2 (freestanding) …
+  clusters→ids: 54
+map type=3 (monument) …
+  clusters→ids: 280
+map type=4 (sculpture) …
+  clusters→ids: 124
+map type=5 (decorative) …
+  clusters→ids: 114
+map type=6 (fountain) …
+  clusters→ids: 53
+unique ids: 1121 range 10–1231
+{
+  "unique_ids": 1121,
+  "by_type": {
+    "plaque": 496,
+    "freestanding": 54,
+    "monument": 280,
+    "sculpture": 124,
+    "decorative": 114,
+    "fountain": 53
+  },
+  "with_coords": 1119,
+  "fetched": 0,
+  "cached": 6
+}
+wrote /Users/tulechki/Projects/focus-imi/rhm-wd-rtrip/scrape/export/canonical_ids.csv
+
+=== fetch_detail.py ===
+canonical=1121 done=3 todo=1118 delay=1.25s
+canonical=1121 done=5 todo=1116 delay=1.25s
+  25/1116 ok=25 err=0 http_fetched=50 cached=0 eta=57.1m
+  50/1116 ok=50 err=0 http_fetched=100 cached=0 eta=56.1m
+  75/1116 ok=75 err=0 http_fetched=150 cached=0 eta=55.0m
+  100/1116 ok=100 err=0 http_fetched=200 cached=0 eta=54.3m
+  125/1116 ok=125 err=0 http_fetched=250 cached=0 eta=53.0m
+  150/1116 ok=150 err=0 http_fetched=300 cached=0 eta=51.7m
+  175/1116 ok=175 err=0 http_fetched=350 cached=0 eta=53.9m
+  200/1116 ok=200 err=0 http_fetched=400 cached=0 eta=51.9m
+  225/1116 ok=225 err=0 http_fetched=450 cached=0 eta=49.7m
+  250/1116 ok=250 err=0 http_fetched=500 cached=0 eta=47.7m
+  275/1116 ok=275 err=0 http_fetched=550 cached=0 eta=46.2m
+  300/1116 ok=300 err=0 http_fetched=600 cached=0 eta=44.6m
+  325/1116 ok=325 err=0 http_fetched=650 cached=0 eta=43.0m
+  350/1116 ok=350 err=0 http_fetched=700 cached=0 eta=41.3m
+  375/1116 ok=375 err=0 http_fetched=750 cached=0 eta=39.9m
+  400/1116 ok=400 err=0 http_fetched=800 cached=0 eta=38.4m
+  425/1116 ok=425 err=0 http_fetched=850 cached=0 eta=36.9m
+  450/1116 ok=450 err=0 http_fetched=900 cached=0 eta=35.5m
+  475/1116 ok=475 err=0 http_fetched=950 cached=0 eta=34.1m
+  500/1116 ok=500 err=0 http_fetched=1000 cached=0 eta=32.7m
+  525/1116 ok=525 err=0 http_fetched=1050 cached=0 eta=31.4m
+  550/1116 ok=550 err=0 http_fetched=1098 cached=2 eta=30.0m
+  575/1116 ok=575 err=0 http_fetched=1148 cached=2 eta=28.6m
+  600/1116 ok=600 err=0 http_fetched=1198 cached=2 eta=27.2m
+  625/1116 ok=625 err=0 http_fetched=1248 cached=2 eta=25.8m
+  650/1116 ok=650 err=0 http_fetched=1298 cached=2 eta=24.5m
+  675/1116 ok=675 err=0 http_fetched=1348 cached=2 eta=23.2m
+  700/1116 ok=700 err=0 http_fetched=1398 cached=2 eta=21.8m
+  725/1116 ok=725 err=0 http_fetched=1448 cached=2 eta=20.5m
+  750/1116 ok=750 err=0 http_fetched=1498 cached=2 eta=19.1m
+  775/1116 ok=775 err=0 http_fetched=1548 cached=2 eta=18.0m
+  800/1116 ok=800 err=0 http_fetched=1598 cached=2 eta=16.7m
+  825/1116 ok=825 err=0 http_fetched=1648 cached=2 eta=15.4m
+  ERROR id=942: <urlopen error timed out>
+  850/1116 ok=849 err=1 http_fetched=1697 cached=2 eta=14.4m
+  875/1116 ok=874 err=1 http_fetched=1747 cached=2 eta=13.0m
+  900/1116 ok=899 err=1 http_fetched=1797 cached=2 eta=11.6m
+  925/1116 ok=924 err=1 http_fetched=1847 cached=2 eta=10.3m
+  950/1116 ok=949 err=1 http_fetched=1897 cached=2 eta=8.9m
+  975/1116 ok=974 err=1 http_fetched=1947 cached=2 eta=7.6m
+  1000/1116 ok=999 err=1 http_fetched=1997 cached=2 eta=6.2m
+  1025/1116 ok=1024 err=1 http_fetched=2047 cached=2 eta=4.9m
+  1050/1116 ok=1049 err=1 http_fetched=2097 cached=2 eta=3.5m
+  1075/1116 ok=1074 err=1 http_fetched=2147 cached=2 eta=2.2m
+  1100/1116 ok=1099 err=1 http_fetched=2197 cached=2 eta=0.9m
+  1116/1116 ok=1115 err=1 http_fetched=2229 cached=2 eta=0.0m
+{
+  "requested": 1121,
+  "jsonl_ok": 1120,
+  "this_run_ok": 1115,
+  "this_run_err": 1,
+  "author_ids": 204,
+  "photo_urls": 3978,
+  "fetched": 2229,
+  "cached": 2,
+  "elapsed_s": 3561.7
+}
+authors to fetch: 204
+done=0 todo=204 delay=1.25s
+  25/204 ok=25 err=0 fetched=25 cached=0 eta=5.4m
+  50/204 ok=50 err=0 fetched=50 cached=0 eta=5.1m
+  75/204 ok=75 err=0 fetched=75 cached=0 eta=4.5m
+  100/204 ok=100 err=0 fetched=100 cached=0 eta=3.7m
+  125/204 ok=125 err=0 fetched=125 cached=0 eta=2.9m
+  150/204 ok=150 err=0 fetched=150 cached=0 eta=2.1m
+  175/204 ok=175 err=0 fetched=175 cached=0 eta=1.2m
+  200/204 ok=200 err=0 fetched=200 cached=0 eta=0.2m
+  204/204 ok=204 err=0 fetched=204 cached=0 eta=0.0m
+{
+  "authors": 204,
+  "this_run_ok": 204,
+  "this_run_err": 0,
+  "fetched": 204,
+  "cached": 0,
+  "elapsed_s": 514.2
+}
+DONE

@@ -1,0 +1,14 @@
+{
+  "unique_ids": 1121,
+  "by_type": {
+    "plaque": 496,
+    "freestanding": 54,
+    "monument": 280,
+    "sculpture": 124,
+    "decorative": 114,
+    "fountain": 53
+  },
+  "with_coords": 1119,
+  "fetched": 0,
+  "cached": 6
+}

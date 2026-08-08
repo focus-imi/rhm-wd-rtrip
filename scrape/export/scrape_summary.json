@@ -1,0 +1,26 @@
+{
+  "scraped_at": "2026-08-08T08:24:17Z",
+  "monuments": 1121,
+  "authors": 204,
+  "with_coords": 1119,
+  "with_authors": 287,
+  "with_photos": 1090,
+  "with_date": 520,
+  "photo_urls": 3983,
+  "by_type": {
+    "Декоративен Елемент": 114,
+    "Паметна Плоча": 496,
+    "Паметник": 280,
+    "Скулптура": 124,
+    "Свободно-Стоящ Паметен Знак": 54,
+    "Чешма/фонтан": 53
+  },
+  "delay_s": 1.25,
+  "outputs": [
+    "export/canonical_ids.csv",
+    "export/monuments.jsonl",
+    "export/authors.jsonl",
+    "export/photo_urls.txt",
+    "cache/html/{detail,print,author}/"
+  ]
+}
